@@ -14,3 +14,6 @@ class TestSearch(TestCase):
     
     def test_search_is_case_sensitive(self):
         self.assertEqual(self.search_engine.search("va"), [])
+    
+    def test_search_returns_city_containing_search_text(self):
+        self.assertEqual(self.search_engine.search("ape"), ["Budapest"])

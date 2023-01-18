@@ -1,3 +1,6 @@
+import re
+
+
 class Search:
     CITIES = [
         "Paris",
@@ -25,7 +28,7 @@ class Search:
         search_results: list[str] = []
 
         for city in self.CITIES:
-            if city.startswith(search_text):
+            if re.search(f"{search_text}", city):
                 search_results.append(city)
 
         return search_results
