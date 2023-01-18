@@ -22,6 +22,9 @@ class Search:
     ]
 
     def search(self, search_text: str) -> list:
+        if search_text == "*":
+            return self.CITIES
+            
         if len(search_text) < 2:
             return []
 

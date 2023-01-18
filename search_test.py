@@ -17,3 +17,6 @@ class TestSearch(TestCase):
     
     def test_search_returns_city_containing_search_text(self):
         self.assertEqual(self.search_engine.search("ape"), ["Budapest"])
+
+    def test_search_returns_all_citiies_if_text_is_asterisk(self):
+        self.assertEqual(self.search_engine.search("*"), self.search_engine.CITIES)
